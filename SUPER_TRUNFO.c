@@ -8,8 +8,8 @@
         // inserindo as variáveis utilizadas nas cartas 1 e 2
 
         
-        char codigo1[4];
-        char codigo2[4];
+        char codigo1[5];
+        char codigo2[5];
         int populacao1;
         int populacao2;
         int turismo1;
