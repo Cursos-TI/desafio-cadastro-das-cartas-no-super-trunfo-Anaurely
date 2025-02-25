@@ -1,72 +1,85 @@
-#include <stdio.h>
+#include <stdio.h> 
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
 
+    int main (){
 
-typedef struct {
-    char codigo[4]; // Código da carta (ex: A01)
-    char estado;    // 1ª letra do estado (ex: Y)
-    char Cidade[50]; // Nome da cidade (Junto)
-    int populacao;  // População da cidade
-    float area;     // Área da cidade
-    float pib;      // PIB da cidade
-    int Turismo; // Número de pontos turísticos
-} Carta;
+        // inserindo as variáveis utilizadas nas cartas 1 e 2
 
-void cadastrarCarta(Carta *carta) {
-    printf("Digite o código da carta (ex: R01): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, cidade, população, área, etc.
-    scanf("%s", carta->codigo); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+        
+        char codigo1[5];
+        char codigo2[5];
+        int populacao1;
+        int populacao2;
+        int turismo1;
+        int turismo2;
+        float area1;
+        float area2;
+        float pib1;
+        float pib2;
+        
 
-    printf("Digite a 1ª letra do estado (ex: Y): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
-    scanf("%s", &carta->estado); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+        //Solicitação Cadastramento de informacoes ao usuario da carta 1
 
-    printf("Digite o nome da cidade (ex: CampoGrande): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
-    scanf("%s", carta->Cidade); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+
+        printf("Digite o código da carta (ex: R01): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%s", &codigo1);// Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+               
+        printf("Digite a população (ex: 100000 (Cem mil): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%d", &populacao1); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     
-    printf("Digite a população (ex: 100000 (Cem mil): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
-    scanf("%d", &carta->populacao); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+        printf("Digite a área (ex: 1 km²): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%f", &area1); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     
-    printf("Digite a área (ex: 1 km²): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
-    scanf("%f", &carta->area); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+        printf("Digite o PIB (ex: (1) bilhões): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%f", &pib1); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     
-    printf("Digite o PIB (ex: (1) bilhões): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
-    scanf("%f", &carta->pib); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+        printf("Digite o número de pontos turísticos (ex: 6): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%d", &turismo1); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+
+
+        
+        //Solicitação Cadastramento de informacoes ao usuario da carta 2
+
+        printf("Digite o código da carta (ex: R01): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%s", &codigo2);// Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+        
+        printf("Digite a população (ex: 100000 (Cem mil): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%d", &populacao2); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     
-    printf("Digite o número de pontos turísticos (ex: 6): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
-    scanf("%d", &carta->Turismo); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-
+        printf("Digite a área (ex: 1 km²): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%f", &area2); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     
-}
+        printf("Digite o PIB (ex: (1) bilhões): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%f", &pib2); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+    
+        printf("Digite o número de pontos turísticos (ex: 6): ");// Solicite ao usuário que insira as informações de cada cidade, como o código,estado, nome, população, área, etc.
+        scanf("%d", &turismo2); // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
 
-void exibirCarta(Carta carta) {
 
-    printf("\nDados da Carta %s:\n", carta.codigo);
-    printf("Estado: %c\n", carta.estado);
-    printf("Cidade: %s\n", carta.Cidade);
-    printf("População: %d habitantes\n", carta.populacao);
-    printf("Área: %.2f km²\n", carta.area);
-    printf("PIB: %.2f bilhões de reais\n", carta.pib);
-    printf("Número de pontos turísticos: %d\n", carta.Turismo);
-}
 
-int main() {
-    Carta cartas[2]; // Arranjo para armazenar duas cartas
-    printf("Cadastro de Cartas - Super Trunfo: Países\n");
-    for (int i = 0; i < 2; i++) {
-        printf("\nCadastro da Carta %d:\n", i + 1);    // Cadastra duas cartas
-        cadastrarCarta(&cartas[i]);
+        //imprimindo carta 1 e carta 2
+
+        printf("Cadastro de Cartas - Super Trunfo: Países\n");
+
+        printf("\nCarta 1\n");
+
+        printf("Dados da Carta %s:\n", codigo1);        
+        printf("População: %d habitantes\n", populacao1);
+        printf("Área: %.2f km²\n", area1);
+        printf("PIB: %.2f bilhões de reais\n", pib1);
+        printf("Número de pontos turísticos: %d\n", turismo1);
+
+        printf("\nCarta 2\n"); 
+        printf("Dados da Carta %s:\n", codigo2);        
+        printf("População: %d habitantes\n", populacao2);
+        printf("Área: %.2f km²\n", area2);
+        printf("PIB: %.2f bilhões de reais\n", pib2);
+        printf("Número de pontos turísticos: %d\n", turismo2);
+
+        
+
+        return 0; 
+
     }
-
-    // Exibe os dados das cartas cadastradas
-    printf("\nDados Cadastrados:\n");// Exibição dos Dados das Cartas
-    for (int i = 0; i < 2; i++) {
-        exibirCarta(cartas[i]);
-    }
- 
-  
-   
-
-    return 0;
-}
-
